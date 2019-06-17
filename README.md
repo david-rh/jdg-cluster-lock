@@ -16,3 +16,11 @@ create nfs pv
 
 claim nfs pv
 
+Create Ping Services
+
+oc create -f pingService.yaml
+
+Deploy app using maven fabric8
+
+mvn fabric8:deploy
+
