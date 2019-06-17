@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efspv1
+  annotations:
+   volume.beta.kubernetes.io/storage-class: nfs-class
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /
+    server: fs-71400c08.efs.us-east-2.amazonaws.com
+  persistentVolumeReclaimPolicy: Retain

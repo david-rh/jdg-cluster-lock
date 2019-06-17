@@ -1,0 +1,29 @@
+spec:
+  replicas: 3
+  template:
+    spec:
+      volumes:
+        - name: sharedfilestore
+          persistentVolumeClaim:
+            claimName: efssharedvolume
+      containers:
+        - volumeMounts:
+            - name: sharedfilestore
+              mountPath: /sharedfiles
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 8888
+            protocol: TCP
+          env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+            - name: BASE_PATH
+              value: /sharedfiles
+            - name: CLUSTER_LOCK
+              value: true
+
+

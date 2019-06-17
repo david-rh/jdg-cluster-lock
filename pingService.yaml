@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+spec:
+  clusterIP: None
+  ports:
+  - name: ping
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: cluster-lock
+metadata:
+  name: clusterlock-ping
+  annotations:
+    description: The jgroups ping port.
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: 'true'
