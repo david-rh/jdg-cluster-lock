@@ -25,5 +25,8 @@ spec:
               value: /sharedfiles
             - name: CLUSTER_LOCK
               value: true
-
+            - name: DEMO_WRITE_DELAY
+              value: 1000
+            - name: JAVA_OPTIONS
+              value: '-Djava.net.preferIPv4Stack=true'
 
