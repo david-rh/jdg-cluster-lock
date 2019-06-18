@@ -1,8 +1,8 @@
-#Red Hat Data Grid Clustered Lock Demo
+# Red Hat Data Grid Clustered Lock Demo
 
 This project demonstrated the use of Data Grid's Clustered Lock feature to synchronize across multiple pods on OpenShift.
 
-##Prerequisites
+## Prerequisites
 
 Setup OpenShift project
 
@@ -33,7 +33,7 @@ Setup OpenShift project
 
     oc create -f pingService.yaml
 
-##Deploy app using maven fabric8
+## Deploy app using maven fabric8
 
     mvn fabric8:deploy
 
